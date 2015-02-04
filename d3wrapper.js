@@ -34,6 +34,7 @@ function drawSVG(el, width, height, margin, id) {
       .attr('id', id);
 }
 
+//if interplate is undefined, there will be no smoothing
 function createLineGraph(xScale,xKey,yScale,yKey,interpolate){
   return d3.svg.line()
     .interpolate(interpolate)
@@ -41,6 +42,7 @@ function createLineGraph(xScale,xKey,yScale,yKey,interpolate){
     .y(function(d) { return yScale(d[yKey]); });
 }
 
+//if interplate is undefined, there will be no smoothing
 function createAreaGraph(xScale,xKey,yScale,yKey,interpolate){
   return d3.svg.area()
     .interpolate(interpolate)
