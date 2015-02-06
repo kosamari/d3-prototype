@@ -1,7 +1,7 @@
 /*
 * D3 CONSTRUCTION FUNCTIONS
 */
-function datasetPluck(data,key){
+function datasetPluck(data, key){
   return data.map(function(d) { return d[key]; });
 }
 
@@ -17,12 +17,12 @@ function createOrdinalScale(range){
   return d3.scale.ordinal().rangePoints(range);
 }
 
-function createXDomain(timelineData,graphData,key,padding){
+function createXDomain(timelineData, graphData, key, padding){
   var domain = datasetPluck(timelineData,key).concat(datasetPluck(graphData,key));
   return  [d3.min(domain)-padding, d3.max(domain)-0+padding];
 }
 
-function createAxis(scale,orient){
+function createAxis(scale, orient){
   return d3.svg.axis().scale(scale).orient(orient);
 }
 
@@ -35,7 +35,7 @@ function drawSVG(el, width, height, margin, id) {
 }
 
 //if interplate is undefined, there will be no smoothing
-function createLineGraph(xScale,xKey,yScale,yKey,interpolate){
+function createLineGraph(xScale, xKey, yScale, yKey, interpolate){
   return d3.svg.line()
     .interpolate(interpolate)
     .x(function(d) { return xScale(d[xKey]); })
@@ -43,7 +43,7 @@ function createLineGraph(xScale,xKey,yScale,yKey,interpolate){
 }
 
 //if interplate is undefined, there will be no smoothing
-function createAreaGraph(xScale,xKey,yScale,yKey,interpolate){
+function createAreaGraph(xScale, xKey, yScale, yKey, interpolate){
   return d3.svg.area()
     .interpolate(interpolate)
     .x(function(d) { return xScale(d[xKey]); })
@@ -51,7 +51,7 @@ function createAreaGraph(xScale,xKey,yScale,yKey,interpolate){
     .y1(function(d) { return yScale(d[yKey]); });
 }
 
-function drawclipPath(canvas,width,height,id){
+function drawclipPath(canvas, width, height, id){
   return canvas.append('defs').append('clipPath')
     .attr('id', id)
     .append('rect')
@@ -59,7 +59,7 @@ function drawclipPath(canvas,width,height,id){
       .attr('height', height);
 }
 
-function drawRectangle(canvas,width,height){
+function drawRectangle(canvas, width, height){
   return canvas.append('rect')
     .attr('width', width)
     .attr('height', height);
