@@ -71,3 +71,5 @@ function drawAxis(canvas, axisGenerator, attrClass, translateLoc) {
     .attr('transform', 'translate('+translateLoc+ ')')
     .call(axisGenerator);
 }
+
+// TODO: add brush constructore
