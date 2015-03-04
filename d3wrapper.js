@@ -72,4 +72,7 @@ function drawAxis(canvas, axisGenerator, attrClass, translateLoc) {
     .call(axisGenerator);
 }
 
-// TODO: add brush constructore
+/* TODO:
+add brush const.
+add charting options
+*/
