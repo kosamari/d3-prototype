@@ -75,4 +75,5 @@ function drawAxis(canvas, axisGenerator, attrClass, translateLoc) {
 /* TODO:
 add brush const.
 add charting options
+add chart color libraries
 */
